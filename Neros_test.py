@@ -289,11 +289,14 @@ class Neros:
         num = ((etc+1)**2 - 1) 
         den = ((etc+1)**2 + 1) 
         #sech-curved: uncomment following two lines
-        #num = 2*(1 + etc)
-        #den = (etc+1)**2 +1
+#         num = 2*(1 + etc)
+#         den = (etc+1)**2 +1
         #(1-sech): uncomment following two lines
-        #num = (etc)**2 
-        #den = 1+ (1 + etc)**2
+#         num = (etc)**2 
+#         den = 1+ (1 + etc)**2
+        #cosh+sinh
+        num = 2*(etc+1)**2
+        den = 2*(1 + etc)
         return  num/den
        
 
@@ -301,17 +304,17 @@ class Neros:
         etFlat = self._eTsiFlatMinusOne(other_vlum)
         etCurve = self._eTsiCurveMinusOne(MW_phi, other_phi, phi_zero)
         #coth-e-flat/curve
-        num = 2 + etFlat + etCurve
-        den = etFlat - etCurve
+#         num = 2 + etFlat + etCurve
+#         den = etFlat - etCurve
         #csch: uncomment following two lines
-        #num = 2*(etFlat+1)*(etCurve+1)
-        #den =   (etFlat+1)**2 + (etCurve+1)**2
+        num = 2*(etFlat+1)*(etCurve+1)
+        den =   (etFlat+1)**2 + (etCurve+1)**2
         #sinh: uncomment following two lines
-        #num = etFlat - etCurve
-        #den = 2*np.sqrt((etFlat + 1)/(etCurve +1))
+#         num = etFlat - etCurve
+#         den = 2*np.sqrt((etFlat + 1)/(etCurve +1))
         #not sure which function
-        #num = (etFlat+1)*(etCurve+1) -1/((etFlat+1)*(etCurve+1)) 
-        #den =  (etFlat + 1)/(etCurve +1)+1/((etFlat+1)*(etCurve+1))
+#         num = (etFlat+1)*(etCurve+1) -1/((etFlat+1)*(etCurve+1)) 
+#         den =  (etFlat + 1)/(etCurve +1)+1/((etFlat+1)*(etCurve+1))
         return num/den
         
 
